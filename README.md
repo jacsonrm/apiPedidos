@@ -134,8 +134,8 @@ apiPedidos/
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [Seu Nome Aqui] - Professor na Coti Informática  
-📧 Contato: [seu-email@email.com]  
-🔗 LinkedIn: [Seu LinkedIn]
+Desenvolvido por [Testes]
+📧 Contato: [teste@email.com]  
+🔗 LinkedIn: [LinkedIn]
 
 ---

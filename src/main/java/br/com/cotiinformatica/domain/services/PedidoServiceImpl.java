@@ -13,6 +13,7 @@ import br.com.cotiinformatica.domain.entities.Pedido;
 import br.com.cotiinformatica.domain.exceptions.PedidoNaoEncontradoException;
 import br.com.cotiinformatica.domain.interfaces.PedidoService;
 import br.com.cotiinformatica.repositories.PedidoRepository;
+
 @Service
 public class PedidoServiceImpl implements PedidoService {
 	@Autowired
