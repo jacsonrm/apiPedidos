@@ -32,26 +32,26 @@ public class ModelMapperConfiguration {
 				: StatusPedido.fromInt(ctx.getSource());
 				
 		//Mapeamento para transferencia de dados da classe PedidoRequest para Pedido
-//		mapper.typeMap(PedidoRequest.class, Pedido.class)
-//			.addMappings(map -> {
-//				map.using(stringToLocalDate).map(PedidoRequest::getDataHora, Pedido::setDataHora);
-//				map.using(intToStatusPedido).map(PedidoRequest::getStatus, Pedido::setStatus);
-//			});
+		mapper.typeMap(PedidoRequest.class, Pedido.class)
+			.addMappings(map -> {
+				map.using(stringToLocalDate).map(PedidoRequest::getDataHora, Pedido::setDataHora);
+				map.using(intToStatusPedido).map(PedidoRequest::getStatus, Pedido::setStatus);
+			});
 		
 		//Mapeamento para transferencia de dados da classe Pedido para PedidoResponse
-//		mapper.typeMap(Pedido.class, PedidoResponse.class)
-//			.addMappings(map -> {
-//				map.using(ctx -> {
-//					
-//					var statusPedido = (StatusPedido) ctx.getSource();
-//					var statusResponse = new StatusPedidoResponse();
-//					
-//					statusResponse.setId(statusPedido.getCode());
-//					statusResponse.setNome(statusPedido.toString());
+		mapper.typeMap(Pedido.class, PedidoResponse.class)
+			.addMappings(map -> {
+				map.using(ctx -> {
+					
+					var statusPedido = (StatusPedido) ctx.getSource();
+					var statusResponse = new StatusPedidoResponse();
+					
+					statusResponse.setId(statusPedido.getCode());
+					statusResponse.setNome(statusPedido.toString());
 
-//					return statusResponse;
-//				}).map(Pedido::getStatus, PedidoResponse::setStatus);
-//			});
+					return statusResponse;
+				}).map(Pedido::getStatus, PedidoResponse::setStatus);
+			});
 		
 		return mapper;
 	}
